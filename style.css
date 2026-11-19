@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+@font-face {
+  font-family: "PingFang SC";
+  src: url("fonts/PingFang-Bold.ttf") format("truetype");
+  font-weight: 600 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   color-scheme: dark;
   --sky-deep:    #040c1a;
@@ -19,8 +27,8 @@
   --glow-blue:   rgba(74,142,212,.22);
   --border:      rgba(74,142,212,.18);
   --border-dim:  rgba(74,142,212,.08);
-  --display: "PingFang SC", "苹方", "Noto Sans SC", "Inter", "Helvetica Neue", sans-serif;
-  --body:    "PingFang SC", "苹方", "Noto Sans SC", -apple-system, "Helvetica Neue", "Microsoft YaHei", sans-serif;
+  --display: "PingFang SC", "苹方", "Helvetica Neue", sans-serif;
+  --body:    "PingFang SC", "苹方", "Helvetica Neue", "Microsoft YaHei", sans-serif;
   --page-gutter: clamp(1.2rem, 5vw, 5.5rem);
   --ease-out: cubic-bezier(.2, .75, .25, 1);
 }
