@@ -19,8 +19,8 @@
   --glow-blue:   rgba(74,142,212,.22);
   --border:      rgba(74,142,212,.18);
   --border-dim:  rgba(74,142,212,.08);
-  --display: "PingFang SC", "苹方", "Inter", "Helvetica Neue", "Arial Narrow", sans-serif;
-  --body:    "PingFang SC", "苹方", -apple-system, "Helvetica Neue", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  --display: "PingFang SC", "苹方", "Noto Sans SC", "Inter", "Helvetica Neue", sans-serif;
+  --body:    "PingFang SC", "苹方", "Noto Sans SC", -apple-system, "Helvetica Neue", "Microsoft YaHei", sans-serif;
   --page-gutter: clamp(1.2rem, 5vw, 5.5rem);
   --ease-out: cubic-bezier(.2, .75, .25, 1);
 }
