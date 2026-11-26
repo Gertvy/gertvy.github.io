@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#040c1a">
+  <meta name="description" content="记录今天的情绪。内容只保存在当前浏览器。">
+  <title>情绪日记 — Gertvy</title>
+  <link rel="icon" href="images/star.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script src="static/site.js" defer></script>
+</head>
+<body class="inner-page mood-page">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header" id="top">
+    <a class="brand" href="index.html" aria-label="Gertvy，返回首页"><span class="brand__mark" aria-hidden="true">G</span><span class="brand__word">GERTVY<span class="brand__slash">/</span>HOME</span></a>
+    <nav class="site-nav" aria-label="主导航">
+      <a class="site-nav__link" href="mood.html" aria-current="page">情绪日记</a>
+      <a class="site-nav__link" href="gratitude.html">感恩日记</a>
+      <a class="site-nav__link" href="projects.html">个人项目</a>
+      <a class="site-nav__link" href="about.html">社交媒体</a>
+      <a class="site-nav__link" href="douyin.html">抖音</a>
+    </nav>
+  </header>
+  <main id="main" class="section-wrap inner-main" tabindex="-1" data-journal="mood">
+    <header class="inner-hero">
+      <p class="section-index"><span>01</span><span>MOOD JOURNAL</span></p>
+      <h1>情绪日记</h1>
+      <p>今天的心情是什么样的？可以只写一句，也可以慢慢写。</p>
+      <span class="inner-hero__mark" aria-hidden="true">◐</span>
+    </header>
+    <div class="journal-layout" hidden>
+      <section class="journal-panel" aria-labelledby="editor-title">
+        <h2 id="editor-title">写一条日记</h2>
+        <p class="privacy-note" id="privacy-note">日记不会发布或上传，只保存在当前浏览器。换设备、换浏览器或清除网站数据后，不会保留。</p>
+        <form data-journal-form autocomplete="off" aria-describedby="privacy-note">
+          <fieldset class="mood-choices">
+            <legend>选一个最接近的心情</legend>
+            <div class="mood-options">
+              <label><input type="radio" name="mood" value="平静" required><span>平静</span></label>
+              <label><input type="radio" name="mood" value="开心"><span>开心</span></label>
+              <label><input type="radio" name="mood" value="低落"><span>低落</span></label>
+              <label><input type="radio" name="mood" value="焦虑"><span>焦虑</span></label>
+              <label><input type="radio" name="mood" value="复杂"><span>复杂</span></label>
+            </div>
+          </fieldset>
+          <label class="field-label" for="entry">想写下的话</label>
+          <textarea id="entry" name="entry" rows="5" maxlength="2000" placeholder="今天发生了什么？那一刻我有什么感觉？" required></textarea>
+          <div class="form-actions"><button class="button button--accent" type="submit">保存日记</button><button class="quiet-button" type="button" data-cancel hidden>取消编辑</button></div>
+          <p class="status-message" data-status role="status"></p>
+        </form>
+      </section>
+      <section class="journal-panel journal-history" aria-labelledby="history-title">
+        <h2 id="history-title" tabindex="-1">过往记录</h2>
+        <p class="empty-state" data-empty>还没有记录。写下一句，就可以开始。</p>
+        <ul class="entry-list" data-entries></ul>
+      </section>
+    </div>
+    <noscript><p class="empty-state">开启 JavaScript 后可在当前浏览器记录日记。</p></noscript>
+  </main>
+  <footer class="site-footer section-wrap">
+    <a class="brand brand--footer" href="index.html" aria-label="返回首页"><span class="brand__mark" aria-hidden="true">G</span><span class="brand__word">GERTVY<span class="brand__slash">/</span>HOME</span></a>
+    <a class="site-footer__top" href="#top">回到顶部 ↑</a>
+  </footer>
+</body>
+</html>

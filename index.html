@@ -11,25 +11,28 @@
   <title>Gertvy — 个人主页</title>
   <link rel="icon" href="images/star.png" type="image/png">
   <link rel="stylesheet" href="style.css">
+  <script src="static/site.js" defer></script>
 </head>
 <body class="home-page">
   <a class="skip-link" href="#main">跳到主要内容</a>
-  <header class="site-header">
+  <header class="site-header" id="top">
     <a class="brand" href="index.html" aria-label="Gertvy，返回首页">
       <span class="brand__mark" aria-hidden="true">G</span>
       <span class="brand__word">GERTVY<span class="brand__slash">/</span>HOME</span>
     </a>
     <nav class="site-nav" aria-label="主导航">
-      <a class="site-nav__link" href="#about">关于</a>
-      <a class="site-nav__link" href="#note">一段小记</a>
-      <a class="site-nav__link" href="about.html">社交媒体 <span aria-hidden="true">↗</span></a>
+      <a class="site-nav__link" href="mood.html">情绪日记</a>
+      <a class="site-nav__link" href="gratitude.html">感恩日记</a>
+      <a class="site-nav__link" href="projects.html">个人项目</a>
+      <a class="site-nav__link" href="about.html">社交媒体</a>
+      <a class="site-nav__link" href="douyin.html">抖音</a>
     </nav>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <section class="hero section-wrap" aria-labelledby="hero-title">
       <div class="stars-deco" aria-hidden="true"></div>
-      <div class="hero__copy" data-reveal>
+      <div class="hero__copy">
         <p class="eyebrow"><span class="eyebrow__dot" aria-hidden="true"></span> BLUE HOUR <span class="eyebrow__divider">/</span> 蓝调时刻</p>
         <h1 id="hero-title">你好，<br>我是 <span class="hero__name">Gertvy<span class="hero__asterisk" aria-hidden="true">✳</span></span></h1>
         <p class="hero__intro">这里放着一些关于创作、日常，<br class="desktop-break">还有互联网边角的念头。</p>
@@ -38,7 +41,7 @@
           <span class="hero__note">慢慢逛，不赶时间。</span>
         </div>
       </div>
-      <div class="hero__visual" data-reveal>
+      <div class="hero__visual">
         <div class="hero__visual-top"><span>G / 01</span><span>THIS IS MY CORNER</span></div>
         <figure class="portrait-frame">
           <span class="portrait-frame__sticker" aria-hidden="true">MOTION<br>DESIGN</span>
@@ -50,9 +53,16 @@
       <span class="hero__side-label" aria-hidden="true">BLUE HOUR · 2026</span>
     </section>
 
-    <div class="ticker" aria-label="蓝调时刻、日常记录与网络小角落">
-      <div class="ticker__track"><span>BLUE HOUR</span><i aria-hidden="true">✳</i><span>日常记录</span><i aria-hidden="true">✳</i><span>INTERNET ODDITIES</span><i aria-hidden="true">✳</i><span>慢慢更新</span><i aria-hidden="true">✳</i><span aria-hidden="true">BLUE HOUR</span><i aria-hidden="true">✳</i><span aria-hidden="true">日常记录</span><i aria-hidden="true">✳</i><span aria-hidden="true">INTERNET ODDITIES</span><i aria-hidden="true">✳</i><span aria-hidden="true">慢慢更新</span><i aria-hidden="true">✳</i></div>
-    </div>
+    <section class="home-directory section-wrap" aria-labelledby="directory-title">
+      <div class="home-directory__inner">
+        <div data-reveal><p class="section-index"><span>INDEX</span><span>BLUE HOUR</span></p><h2 id="directory-title">日记与项目</h2></div>
+        <div class="directory-links">
+          <a class="directory-link" href="mood.html"><span>01 / 日记</span><strong>情绪日记</strong><span class="directory-link__arrow" aria-hidden="true">→</span></a>
+          <a class="directory-link" href="gratitude.html"><span>02 / 日记</span><strong>感恩日记</strong><span class="directory-link__arrow" aria-hidden="true">→</span></a>
+          <a class="directory-link" href="projects.html"><span>03 / 索引</span><strong>个人项目</strong><span class="directory-link__arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
 
     <section class="about-section section-wrap" id="about" aria-labelledby="about-title">
       <div class="section-index" data-reveal><span>01</span><span>WHO'S HERE</span></div>
@@ -123,8 +133,11 @@
       <div class="connect-section__top"><span class="section-index section-index--dark"><span>03</span><span>ELSEWHERE</span></span><span class="connect-section__asterisk" aria-hidden="true">✳</span></div>
       <div class="connect-section__body" data-reveal>
         <p class="eyebrow eyebrow--dark">想继续聊聊？</p>
-        <h2 id="connect-title">那就在<br><span>Bilibili</span>见。</h2>
-        <a class="button button--outline" href="https://space.bilibili.com/108243379" target="_blank" rel="noopener noreferrer">打开我的主页 <span aria-hidden="true">↗</span></a>
+        <h2 id="connect-title">在<span>别处</span>见。</h2>
+        <div class="inline-links connect-section__links">
+          <a class="button button--outline" href="https://space.bilibili.com/108243379" target="_blank" rel="noopener noreferrer">哔哩哔哩 <span aria-hidden="true">↗</span></a>
+          <a class="button button--outline" href="douyin.html">抖音 <span aria-hidden="true">→</span></a>
+        </div>
       </div>
       <p class="connect-section__aside">目前先把常去的地方<br>放在这里。</p>
     </section>
@@ -133,23 +146,7 @@
   <footer class="site-footer section-wrap">
     <a class="brand brand--footer" href="index.html" aria-label="回到页面顶部"><span class="brand__mark" aria-hidden="true">G</span><span class="brand__word">GERTVY<span class="brand__slash">/</span>HOME</span></a>
     <span class="site-footer__note">一个还在慢慢长大的个人主页。</span>
-    <a class="site-footer__top" href="#main">回到顶部 ↑</a>
+    <a class="site-footer__top" href="#top">回到顶部 ↑</a>
   </footer>
-  <script>
-    (() => {
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduceMotion || !('IntersectionObserver' in window)) return;
-      document.documentElement.classList.add('has-reveal');
-      const observer = new IntersectionObserver((entries, currentObserver) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            currentObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-      document.querySelectorAll('[data-reveal]').forEach((element) => observer.observe(element));
-    })();
-  </script>
 </body>
 </html>
