@@ -13,26 +13,6 @@
     document.querySelectorAll('[data-reveal]').forEach((el) => observer.observe(el));
   }
 
-  const copyButton = document.querySelector('[data-copy]');
-  if (copyButton) {
-    const value = document.querySelector('[data-copy-value]');
-    const status = document.querySelector('[data-copy-status]');
-    copyButton.hidden = false;
-    copyButton.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(value.textContent.trim());
-        status.textContent = '已复制抖音号。';
-      } catch {
-        const selection = window.getSelection();
-        const range = document.createRange();
-        range.selectNodeContents(value);
-        selection?.removeAllRanges();
-        selection?.addRange(range);
-        status.textContent = '无法自动复制，请手动复制 solitude084。';
-      }
-    });
-  }
-
   const journal = document.querySelector('[data-journal]');
   if (!journal) return;
 

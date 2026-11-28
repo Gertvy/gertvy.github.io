@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#040c1a">
+  <meta name="description" content="48 题标准版或 128 题完整版，五级评分，测量容貌、未来不确定性、社交、学业工作、经济、健康、分离与死亡八个方向的焦虑水平，并生成蛛网图。结果只保存在当前浏览器。">
+  <title>焦虑地形图 — Gertvy</title>
+  <link rel="icon" href="images/star.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script src="static/site.js" defer></script>
+  <script src="static/anxiety.js" defer></script>
+</head>
+<body class="inner-page anxiety-page">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header" id="top">
+    <a class="brand" href="index.html" aria-label="Gertvy，返回首页"><span class="brand__mark" aria-hidden="true">G</span><span class="brand__word">GERTVY<span class="brand__slash">/</span>HOME</span></a>
+    <nav class="site-nav" aria-label="主导航">
+      <a class="site-nav__link" href="mood.html">情绪日记</a>
+      <a class="site-nav__link" href="gratitude.html">感恩日记</a>
+      <a class="site-nav__link" href="anxiety.html" aria-current="page">焦虑自测</a>
+      <a class="site-nav__link" href="projects.html">个人项目</a>
+      <a class="site-nav__link" href="about.html">社交媒体</a>
+    </nav>
+  </header>
+
+  <main id="main" class="section-wrap inner-main anxiety-main" tabindex="-1" data-anxiety>
+    <header class="inner-hero">
+      <p class="section-index"><span>04</span><span>ANXIETY ATLAS</span></p>
+      <h1>焦虑地形图</h1>
+      <p>48 句或 128 句关于日常反应的自我描述，按五级评分，量一量你在八个方向上的紧绷程度。题目不直接问「你焦虑吗」——人对具体情境的反应，往往比对自己的判断更诚实。</p>
+      <span class="inner-hero__mark" aria-hidden="true">◈</span>
+    </header>
+
+    <section class="anxiety-intro" data-screen="intro" aria-labelledby="intro-title">
+      <div class="intro-grid">
+        <div class="intro-copy">
+          <h2 id="intro-title">开始之前</h2>
+          <ol class="facts">
+            <li><span>01</span><p>每题是一句自我描述，按最近一个月的真实情况选择：非常符合、符合、不确定、不符合、非常不符合。</p></li>
+            <li><span>02</span><p>先选版本：标准版 48 题（约 6 分钟），完整版 128 题（约 15 分钟）。选完自动进入下一题，可以随时回看上一题。</p></li>
+            <li><span>03</span><p>反向表述题约占三成，计分时会反向折算，用来抵消「一路点同意」的惯性。请不要刻意揣测出题方向。</p></li>
+            <li><span>04</span><p>答案只留在当前浏览器，不上传、不记录身份。中途刷新可以接着答。</p></li>
+            <li><span>05</span><p>结果是自我观察的参考，不是诊断。若已经持续影响生活，请找专业人士。</p></li>
+          </ol>
+        </div>
+        <div class="intro-dims">
+          <p class="intro-dims__label">八个方向</p>
+          <ul class="dim-chips">
+            <li>容貌</li>
+            <li>未来不确定性</li>
+            <li>社交</li>
+            <li>学业 / 工作</li>
+            <li>经济</li>
+            <li>健康</li>
+            <li>分离</li>
+            <li>死亡</li>
+          </ul>
+          <p class="intro-dims__note">每个方向 6 题（完整版 16 题），其中约三成为反向表述；题目顺序已打散，避免连续同类题影响作答。</p>
+          <svg class="mini-radar" viewBox="0 0 220 220" aria-hidden="true" focusable="false">
+            <g fill="none" stroke="rgba(74,142,212,.16)" stroke-width="1">
+              <polygon points="110,26 169.4,50.6 194,110 169.4,169.4 110,194 50.6,169.4 26,110 50.6,50.6"/>
+              <polygon points="110,54 149.6,70.4 166,110 149.6,149.6 110,166 70.4,149.6 54,110 70.4,70.4"/>
+              <polygon points="110,82 129.8,90.2 138,110 129.8,129.8 110,138 90.2,129.8 82,110 90.2,90.2"/>
+            </g>
+            <g stroke="rgba(74,142,212,.1)" stroke-width="1">
+              <line x1="110" y1="110" x2="110" y2="26"/><line x1="110" y1="110" x2="169.4" y2="50.6"/>
+              <line x1="110" y1="110" x2="194" y2="110"/><line x1="110" y1="110" x2="169.4" y2="169.4"/>
+              <line x1="110" y1="110" x2="110" y2="194"/><line x1="110" y1="110" x2="50.6" y2="169.4"/>
+              <line x1="110" y1="110" x2="26" y2="110"/><line x1="110" y1="110" x2="50.6" y2="50.6"/>
+            </g>
+            <polygon points="110,63.8 126.6,93.4 170.5,110 135,135 110,160.4 92.2,127.8 44.5,110 87.4,87.4" fill="rgba(169,188,255,.1)" stroke="rgba(169,188,255,.4)" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </div>
+      <div class="versions" role="radiogroup" aria-label="选择测试版本" data-versions>
+        <button class="version is-active" type="button" role="radio" aria-checked="true" data-mode="short">
+          <span class="version__head"><span class="version__name">标准版</span><span class="version__tag">48 题 · 约 6 分钟</span></span>
+          <span class="version__desc">每个方向 6 题。适合先看一个大概的分布。</span>
+        </button>
+        <button class="version" type="button" role="radio" aria-checked="false" data-mode="long">
+          <span class="version__head"><span class="version__name">完整版</span><span class="version__tag">128 题 · 约 15 分钟</span></span>
+          <span class="version__desc">每个方向 16 题。题目更多，单次波动更小，适合认真做一次。</span>
+        </button>
+      </div>
+      <div class="intro-actions">
+        <button class="button button--accent" type="button" data-start>开始作答</button>
+        <span class="intro-meta" data-draft-note>约 6 分钟 · 48 题 · 本地计算</span>
+      </div>
+      <details class="refs">
+        <summary>题目依据与参考文献</summary>
+        <div class="refs__body">
+          <p>本页题目为自编情境与自我描述题，按八个焦虑领域的测量框架设计，并参考以下工具：</p>
+          <ul>
+            <li>容貌：Appearance Anxiety Inventory（AAI；Veale et al., 2014）、Social Appearance Anxiety Scale（SAAS；Hart et al., 2008）。</li>
+            <li>未来不确定性：Intolerance of Uncertainty Scale-12（IUS-12；Carleton, Norton &amp; Asmundson, 2007）。</li>
+            <li>社交：Liebowitz Social Anxiety Scale（LSAS；Liebowitz, 1987）。</li>
+            <li>学业 / 工作：Test Anxiety Inventory（TAI；Spielberger, 1980）、Maslach Burnout Inventory（MBI；Maslach &amp; Jackson, 1981）。</li>
+            <li>经济：Financial Anxiety Scale（Archuleta, Dale &amp; Spann, 2013）。</li>
+            <li>健康：Short Health Anxiety Inventory（SHAI；Salkovskis et al., 2002）。</li>
+            <li>分离：Adult Separation Anxiety Questionnaire（ASA-27；Manicavasagar et al., 2003）。</li>
+            <li>死亡：Death Anxiety Scale（DAS；Templer, 1970）。</li>
+            <li>总体框架：Zung Self-Rating Anxiety Scale（1971）、GAD-7（Spitzer et al., 2006）、Penn State Worry Questionnaire（Meyer et al., 1990）。</li>
+          </ul>
+          <p>计分说明：采用 5 点李克特量表（非常符合＝4 分，非常不符合＝0 分）。标准版每维 6 题（含 2 道反向题），完整版每维 16 题（含 5 道反向题）；反向题按 4 − 原始分 折算，以降低默认同意倾向。维度原始分（标准版 0–24，完整版 0–64）线性换算为 0–100 仅用于呈现，不改变排序。</p>
+          <p>上述量表均有各自的计分与常模；本页只借用其维度划分与题目写法思路，未使用原题，也未做信效度检验，因此结果不能用于临床筛查、诊断或与他人比较排名。</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="quiz" data-screen="quiz" hidden aria-labelledby="q-text">
+      <div class="quiz__head">
+        <span class="quiz__count">第 <b data-qnum>1</b> / <span data-qtotal>48</span> 题</span>
+        <span class="quiz__dim">自我描述</span>
+      </div>
+      <div class="quiz__progress" role="progressbar" aria-valuemin="1" aria-valuemax="48" aria-valuenow="1" aria-label="作答进度"><span data-progress></span></div>
+      <div class="quiz__card">
+        <h2 class="quiz__question" id="q-text" data-question tabindex="-1"></h2>
+        <p class="quiz__instruction">这句话有多符合你？</p>
+        <div class="scale" role="radiogroup" aria-labelledby="q-text" data-options></div>
+        <div class="quiz__foot">
+          <button class="quiet-button" type="button" data-prev>← 上一题</button>
+          <span class="quiz__kbd">键盘 1–5 选择 · ← 返回</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="result" data-screen="result" hidden aria-labelledby="result-title">
+      <h2 id="result-title" class="visually-hidden">测试结果</h2>
+      <p class="section-index result__index"><span>RESULT</span><span>YOUR ATLAS</span></p>
+      <p class="result__mode" data-mode-label>标准版 · 48 题</p>
+      <div class="result__top">
+        <div class="score-card">
+          <p class="score-card__label">总体焦虑指数</p>
+          <p class="score-card__value"><span data-overall>0</span><small>/100</small></p>
+          <p class="score-card__band" data-band>—</p>
+          <p class="score-card__peaks" data-peaks></p>
+          <p class="score-card__summary" data-summary></p>
+          <div class="score-legend" aria-label="分数区间说明">
+            <span><i style="background:var(--lv-0)"></i>舒缓 0–33</span>
+            <span><i style="background:var(--lv-1)"></i>起伏 34–66</span>
+            <span><i style="background:var(--lv-2)"></i>紧绷 67–100</span>
+          </div>
+          <p class="score-card__hint">八个方向的平均标准分。数值越高，紧绷程度越高。</p>
+        </div>
+        <figure class="radar">
+          <div data-radar></div>
+          <figcaption>焦虑地形 · 数值越高，该方向越紧绷（0–100）</figcaption>
+        </figure>
+      </div>
+      <div class="result__dims" data-dims></div>
+      <div class="reading" data-reading></div>
+      <div class="result__actions">
+        <button class="button button--accent" type="button" data-restart>重新测一次</button>
+        <button class="quiet-button" type="button" data-copy>复制结果</button>
+        <span class="status-message" data-copy-status role="status"></span>
+      </div>
+      <aside class="result__note">
+        <p><strong>这不是诊断。</strong>本页只提供一个观察自己的角度，不能替代专业评估。分数高不代表「有问题」，分数低也不代表「没问题」。</p>
+        <p>如果焦虑已经影响睡眠、进食、工作或关系，可以拨打全国统一心理援助热线 <a href="tel:12356">12356</a>（2025 年起全国启用），或前往当地精神卫生中心。</p>
+      </aside>
+    </section>
+
+    <noscript><p class="empty-state">开启 JavaScript 后可以作答并生成蛛网图。</p></noscript>
+  </main>
+
+  <footer class="site-footer section-wrap">
+    <a class="brand brand--footer" href="index.html" aria-label="返回首页"><span class="brand__mark" aria-hidden="true">G</span><span class="brand__word">GERTVY<span class="brand__slash">/</span>HOME</span></a>
+    <a class="site-footer__top" href="#top">回到顶部 ↑</a>
+  </footer>
+</body>
+</html>
